@@ -1,16 +1,20 @@
-# flutter_ecatalog
+# ecatalog
 
-A new Flutter project.
+This is a practice project created using Flutter BLoC.
 
-## Getting Started
+### Feature
+* Authentication
+* Add
+* Update
+* Pagination
 
-This project is a starting point for a Flutter application.
+### Public APi
+Platzi Fake Store API : [Klik Here](https://fakeapi.platzi.com/)
 
-A few resources to get you started if this is your first Flutter project:
+### Package Using:
+* flutter_bloc: [Klik Here](https://pub.dev/packages/flutter_bloc)
+* http: [Klik Here](https://pub.dev/packages/http)
+* shared_preferences: [Klik Here](https://pub.dev/packages/shared_preferences)
+* dartz: [Klik Here](https://pub.dev/packages/dartz)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
