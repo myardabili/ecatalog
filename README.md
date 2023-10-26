@@ -5,7 +5,6 @@ This is a practice project created using bloc state management.
 ### Feature
 * Authentication
 * Add
-* Update
 * Pagination
 
 ### Public APi
