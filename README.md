@@ -1,6 +1,6 @@
 # ecatalog
 
-This is a practice project created using flutter bloc state management.
+This is a practice project created using bloc state management.
 
 ### Feature
 * Authentication
