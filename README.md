@@ -16,5 +16,6 @@ Platzi Fake Store API : [Klik Here](https://fakeapi.platzi.com/)
 * http: [Klik Here](https://pub.dev/packages/http)
 * shared_preferences: [Klik Here](https://pub.dev/packages/shared_preferences)
 * dartz: [Klik Here](https://pub.dev/packages/dartz)
+* equatable: [Klik Here](https://pub.dev/packages/equatable)
 
 
