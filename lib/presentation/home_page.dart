@@ -18,6 +18,8 @@ class _HomePageState extends State<HomePage> {
   TextEditingController? priceController;
   TextEditingController? descriptionController;
 
+  final scrollController = ScrollController();
+
   @override
   void initState() {
     titleController = TextEditingController();
@@ -25,6 +27,12 @@ class _HomePageState extends State<HomePage> {
     descriptionController = TextEditingController();
     super.initState();
     context.read<ProductsBloc>().add(GetProductsEvent());
+    scrollController.addListener(() {
+      if (scrollController.position.maxScrollExtent ==
+          scrollController.offset) {
+        context.read<ProductsBloc>().add(NextProductsEvent());
+      }
+    });
   }
 
   @override
@@ -57,11 +65,19 @@ class _HomePageState extends State<HomePage> {
       ),
       body: BlocBuilder<ProductsBloc, ProductsState>(builder: (context, state) {
         if (state is ProductsILoaded) {
+          debugPrint('total data: ${state.data.length}');
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16.0),
             child: ListView.builder(
-              // reverse: true,
+              controller: scrollController,
               itemBuilder: (context, index) {
+                if (state.isNext && index == state.data.length) {
+                  return const Card(
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
+                }
                 return Card(
                   child: ListTile(
                     title:
@@ -70,7 +86,8 @@ class _HomePageState extends State<HomePage> {
                   ),
                 );
               },
-              itemCount: state.data.length,
+              itemCount:
+                  state.isNext ? state.data.length + 1 : state.data.length,
             ),
           );
         }
